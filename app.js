@@ -2,6 +2,8 @@
 import people from './data.js';
 
 const sliderContainer = document.querySelector('.slider-container');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
 
 sliderContainer.innerHTML = people
   .map((person, slideIndex) => {
@@ -24,3 +26,14 @@ sliderContainer.innerHTML = people
             </article>`;
   })
   .join('');
+
+const startSlider = (type) => {
+  console.log(type);
+};
+
+prevBtn.addEventListener('click', () => {
+  startSlider('prev');
+});
+nextBtn.addEventListener('click', () => {
+  startSlider();
+});

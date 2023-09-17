@@ -94,3 +94,27 @@ h1 span {
 .next-btn {
     right: -1rem;
 }
+
+/*  */
+.slider-container {
+    display: flex;
+    height: 600px;
+}
+
+.slide {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.active {
+    transform: translate(0);
+}
+
+.next {
+    transform: translate(100%);
+}
+
+.last {
+    transform: translate(-100%);
+}

@@ -31,7 +31,6 @@ const startSlider = (type) => {
   const active = document.querySelector('.active');
   const last = document.querySelector('.last');
   let next = active.nextElementSibling;
-
   if (!next) {
     next = sliderContainer.firstElementChild;
   }
@@ -40,18 +39,27 @@ const startSlider = (type) => {
   last.classList.remove('last');
   next.classList.remove('next');
 
+  if (type === 'prev') {
+    active.classList.add('next');
+    next.classList.add('next');
+    last.classList.add('active');
+    next = last.previousElementSibling;
+    if (!next) {
+      next = sliderContainer.lastElementChild;
+    }
+    next.classList.remove('next');
+    next.classList.add('last');
+    return;
+  }
+
   active.classList.add('last');
   last.classList.add('next');
   next.classList.add('active');
-
-  if (type === 'prev') {
-    console.log(type);
-  }
 };
 
-prevBtn.addEventListener('click', () => {
-  startSlider('prev');
-});
 nextBtn.addEventListener('click', () => {
   startSlider();
+});
+prevBtn.addEventListener('click', () => {
+  startSlider('prev');
 });

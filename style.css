@@ -99,6 +99,7 @@ h1 span {
 .slider-container {
     display: flex;
     height: 600px;
+    overflow: hidden;
 }
 
 .slide {
@@ -110,12 +111,15 @@ h1 span {
 
 .active {
     transform: translate(0);
+    opacity: 1;
 }
 
 .next {
     transform: translate(100%);
+    opacity: 0;
 }
 
 .last {
     transform: translate(-100%);
+    opacity: 0;
 }
